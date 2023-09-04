@@ -1,0 +1,30 @@
+package com.zensar.controllers;
+
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController {
+	
+	
+	@GetMapping("/all")
+	public String welcome() {
+		return "<h2>Welcome Everyone</h2>";
+	}
+	
+	
+	@GetMapping("/admin")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+	public String welocomeAdmin() {
+		return "<h2>Welcome Admin</h2>";
+	}
+	
+	
+	@PreAuthorize("hasAuthority('ROLE_USER')")
+	@GetMapping("/user")
+	public String welcomeUser() {
+		return "<h2>Welcome User</h2>";
+	}
+
+}

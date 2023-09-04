@@ -1,0 +1,11 @@
+package pack1;
+
+public class B extends A {
+	
+	
+	public void displayme() {
+		System.out.println("Inside B");
+	}
+
+
+}

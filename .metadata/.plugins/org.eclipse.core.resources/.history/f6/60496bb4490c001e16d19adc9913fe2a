@@ -1,0 +1,22 @@
+package pack1;
+
+import java.util.ArrayList;
+
+
+@MyCustomAnnotation(authorName="Sharad R.", purpose = "testing")
+public class Test {
+
+	@SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		ArrayList a=new ArrayList();
+
+		//A a = new B();
+
+		//a.displayMe();
+
+	}
+
+}

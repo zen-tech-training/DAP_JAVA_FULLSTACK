@@ -1,0 +1,11 @@
+package pack1;
+
+public @interface MyCustomAnnotation {
+	
+	
+	
+	String authorName();
+	 String purpose();
+	
+
+}

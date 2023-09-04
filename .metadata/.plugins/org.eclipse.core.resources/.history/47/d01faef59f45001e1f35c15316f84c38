@@ -1,0 +1,5 @@
+package com.zensar.springapplication.dto;
+
+public class ApiError {
+
+}

@@ -1,0 +1,65 @@
+package com.zensar.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+	@Id
+	private int userId;
+	
+	private String userName;
+	
+	private String passaword;
+	
+	private String roles;
+	
+	
+
+	public User() {
+		super();
+	}
+
+	public User(int userId, String userName, String passaword, String roles) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.passaword = passaword;
+		this.roles = roles;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassaword() {
+		return passaword;
+	}
+
+	public void setPassaword(String passaword) {
+		this.passaword = passaword;
+	}
+
+	public String getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+	
+	
+
+}

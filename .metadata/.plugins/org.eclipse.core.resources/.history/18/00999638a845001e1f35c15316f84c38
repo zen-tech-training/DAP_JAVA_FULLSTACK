@@ -1,0 +1,45 @@
+package com.zensar;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.zensar.entity.Laptop;
+import com.zensar.entity.User;
+import com.zensar.repository.UserRepository;
+
+@SpringBootApplication
+public class EntityRelationshipApplication implements CommandLineRunner {
+	
+	@Autowired
+	private UserRepository userRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(EntityRelationshipApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		User user=new User();
+		
+		user.setUserName("John");
+		
+		Laptop laptop=new Laptop();
+		
+		laptop.setName("DELL");
+		
+		user.setLaptop(laptop);
+		
+		
+		userRepository.findById(1);
+		
+		
+		
+		userRepository.save(user);
+		
+		
+	}
+
+}
