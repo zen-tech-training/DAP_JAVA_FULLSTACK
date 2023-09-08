@@ -1,0 +1,27 @@
+package com.zensar.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.zensar.dto.AuthenticateRequest;
+import com.zensar.services.UserDetailsServiceImpl;
+
+@RestController
+public class AuthenticationController {
+	
+	@Autowired
+	private UserDetailsServiceImpl userDetailsServiceImpl;
+	
+	
+	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticateRequest authenticateRequest){
+		
+		
+		
+		return null;
+	}
+	
+	
+
+}
