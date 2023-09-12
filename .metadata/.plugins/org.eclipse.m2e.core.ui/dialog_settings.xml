@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\DAPCoreJava\product-service"/>
+			<item value="D:\DAPCoreJava\coupon-service"/>
+			<item value="D:\DAPCoreJava\spring-security-social-login"/>
 			<item value="D:\EntityMappingSpringDataDemo"/>
 			<item value="C:\Users\sr43993\Downloads\spring-application-web"/>
 			<item value="C:\Users\sr43993\Downloads\spring-application\spring-application"/>
