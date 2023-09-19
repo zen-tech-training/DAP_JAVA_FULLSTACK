@@ -2,18 +2,14 @@
 //import java.util.List;
 //import java.util.concurrent.CopyOnWriteArrayList;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-
 //import pack1.pack2.B;
 
 public class Test {
 
-	public static void main(String[] args) throws FileNotFoundException, IOException { // 95
+	public static void main(String[] args)  { 
 		
+		System.out.println(args[0]);
 		
-		ArrayList a;
 	}
 
 }

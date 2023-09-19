@@ -19,9 +19,7 @@ import com.zensar.dto.CouponDto;
 import com.zensar.service.CouponService;
 
 @RestController
-@RequestMapping(value = "/coupon-api", produces = { MediaType.APPLICATION_JSON_VALUE,
-		MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
-				MediaType.APPLICATION_XML_VALUE })
+@RequestMapping(value = "/coupon-api")
 public class Controller {
 	@Autowired
 	private CouponService couponService;
@@ -32,10 +30,11 @@ public class Controller {
 	}*/
 	
 	@GetMapping("/coupons/{couponCode}")
-	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponId") String couponCode) {
+	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponCode") String couponCode) {
 		return new ResponseEntity<>(couponService.getCoupon(couponCode),HttpStatus.OK);
 	}
 
+	// http://localhost:8083/coupon-api/coupons
 	@GetMapping("/coupons")
 	public ResponseEntity<List<CouponDto>> getAllCoupons() {
 		return new ResponseEntity<>(couponService.getAllCoupons(),HttpStatus.OK);
