@@ -21,11 +21,11 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@Autowired
-	private RestClient restClient;
-	
 	//@Autowired
-	//private RestTemplate restTemplate;
+	//private RestClient restClient;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	
 
@@ -33,11 +33,11 @@ public class ProductController {
 	@PostMapping("/product")
 	public Product insertProduct(@RequestBody Product product) {
 		
-		//CouponDto couponDto = restTemplate.getForObject("http://localhost:8083/coupon-api/coupons/"+product.getCouponCode(),CouponDto.class);
+		CouponDto couponDto = restTemplate.getForObject("http://localhost:8083/coupon-api/coupons/"+product.getCouponCode(),CouponDto.class);
 	 	 
 		//CouponDto couponDto = restTemplate.getForObject("http://COUPON-SERVICE/coupon-api/coupons/"+product.getCouponCode(),CouponDto.class);
 		
-		CouponDto couponDto = restClient.getCoupon(product.getCouponCode());
+		//CouponDto couponDto = restClient.getCoupon(product.getCouponCode());
 		
 		product.setPrice(product.getPrice()-100);
 		
