@@ -1,8 +1,8 @@
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
+
+ 
     
     
 eureka:
@@ -18,6 +18,8 @@ eureka:
     
 server:
   port: 8888
+  
+  
   
 
     

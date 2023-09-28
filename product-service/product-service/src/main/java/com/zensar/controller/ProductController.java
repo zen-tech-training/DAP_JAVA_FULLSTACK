@@ -14,6 +14,10 @@ import com.zensar.entity.Product;
 import com.zensar.rest.client.RestClient;
 import com.zensar.services.ProductService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
+
 @RestController
 @RequestMapping("/product-api")
 public class ProductController {
@@ -31,6 +35,7 @@ public class ProductController {
 
 	 //http://localhost:8082/product-api/product -> POST
 	@PostMapping("/product")
+	@CircuitBreaker(name = "serviceA", fallbackMethod = "fallbackMethod")
 	public Product insertProduct(@RequestBody Product product) {
 		
 		CouponDto couponDto = restTemplate.getForObject("http://localhost:8083/coupon-api/coupons/"+product.getCouponCode(),CouponDto.class);
@@ -43,6 +48,11 @@ public class ProductController {
 		
 		return productService.insertProduct(product);
 	
+	}
+	
+	
+	public Product fallbackMethod(Exception e) {
+		return new Product();
 	}
 
 }
